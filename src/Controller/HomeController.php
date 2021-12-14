@@ -10,7 +10,7 @@ use App\Repository\UserRepository;
 class HomeController extends AbstractController{
 
     public function index(){
-        $_SESSION["page"] = "home";var_dump($_SESSION["page"]);
+        $_SESSION["page"] = "home";
         $user = new User();
         $flash = new FlashBag();
         $flash->empty();
@@ -18,7 +18,7 @@ class HomeController extends AbstractController{
         $post = $_POST;
         if($post != null){
             $email = (isset($post["login_email"]))?$post["login_email"]:"";
-            $password = (isset($post["login_password"]))?$post["login_password"]:"";
+            $password = (isset($post["login_password"]))?$post["login_password"]:"";/*
             if($email != "" && $password != ""){
                 $ur = new UserRepository();
                 $result = $ur->findUserByEmail($email);
@@ -37,7 +37,9 @@ class HomeController extends AbstractController{
             }else{
                 $flash->set("Veuillez remplir tous les champs","danger");
             }
-            $user->setEmail($email);
+            $user->setEmail($email);*/
+            $_SESSION["page"] = "admin_category";
+            $this->Toredirect("admin");
         }
         return $this->render("home/index.html.twig",[
             "user" => $user,
