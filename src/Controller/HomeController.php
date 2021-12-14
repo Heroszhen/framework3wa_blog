@@ -38,7 +38,7 @@ class HomeController extends AbstractController{
                 $flash->set("Veuillez remplir tous les champs","danger");
             }
             $user->setEmail($email);*/
-            $_SESSION["page"] = "admin_category";
+            $_SESSION["page"] = "admin";
             $this->Toredirect("admin");
         }
         return $this->render("home/index.html.twig",[

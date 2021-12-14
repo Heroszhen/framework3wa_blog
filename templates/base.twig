@@ -14,13 +14,13 @@
   </head>
   <body>
   {{ session["page"] }}
-    {% if session["page"] != "home" %}
+    {% if session["page"] == "admin" %}
       {% include 'admin/adminheader.html.twig' %}
     {% endif %}
 
     {% block content %}{% endblock %}
 
-    {% if session["page"] != "home" %}
+    {% if session["page"] == "admin" %}
       {% include 'admin/adminmenu.html.twig' %}
     {% endif %}
 
