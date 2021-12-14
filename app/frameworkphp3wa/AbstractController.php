@@ -7,15 +7,16 @@ use Twig\Environment;
 use Twig\Loader\FilesystemLoader;
 
 abstract class AbstractController{
-    private $templateEngine;
+    private $templateEngine = null;
 
     public function __construct() {
-        $loader = new FilesystemLoader(dirname(__DIR__, 2) . '/templates');
-        $twig = new Environment($loader, [
-            'cache' => false,
-        ]);
-        $twig->addGlobal('session', $_SESSION);
-        $this->templateEngine = $twig;
+        // $loader = new FilesystemLoader(dirname(__DIR__, 2) . '/templates');
+        // $twig = new Environment($loader, [
+        //     'cache' => false,
+        // ]);
+        // $twig->addGlobal('session', $_SESSION);
+        // $this->templateEngine = $twig;
+        $this->templateEngine = $_SESSION["twig"];
     }
 
     public function render($file,$arguments=[]){

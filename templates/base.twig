@@ -6,19 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     {% block stylesheets %}
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
       <link rel="stylesheet" type="text/css" href="/lib/bootstrap-4.4.1-dist/css/bootstrap.min.css">
       <link rel="stylesheet" type="text/css" href="/css/style.css">
     {% endblock %}
     <title>{% block title %}Frameworkphp3wa{% endblock %}</title>
   </head>
   <body>
+  {{ session["page"] }}
+    {% if session["page"] != "home" %}
+      {% include 'admin/adminheader.html.twig' %}
+    {% endif %}
 
-  <!--
-    <div id="bigimg">
-      <img>
-    </div>
-    -->
     {% block content %}{% endblock %}
+
+    {% if session["page"] != "home" %}
+      {% include 'admin/adminmenu.html.twig' %}
+    {% endif %}
 
     {% block javascripts %}
       <!-- Optional JavaScript -->

@@ -4,7 +4,7 @@ namespace App\Entity;
 
 class Exemple{
     private $id;
-    
+
 
     /**
      * Get the value of id

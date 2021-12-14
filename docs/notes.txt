@@ -58,3 +58,17 @@ php -S localhost:8000 -t public
         $req = "DELETE FROM article WHERE id = ".$id;
         $this->pdo->query($req);
     }
+
+
+---template 
+https://startbootstrap.com/previews/sb-admin-2
+
+zhen@gmail.com
+aaaaaaaa:
+$2y$10$8Zl5biOixFjvriqo5SR0F.EGK7lQnxsrrUGx.VTRBxeL5.7yNXh4K
+
+password_hash("aaaaaaaa", PASSWORD_DEFAULT)
+
+
+---blog
+user , category, photo, article,

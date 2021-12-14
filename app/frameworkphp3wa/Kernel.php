@@ -5,7 +5,6 @@ namespace Frameworkphp3wa;
 
 use Frameworkphp3wa\Router;
 use Frameworkphp3wa\Database\ConnectMysql;
-use Twig;
 
 class Kernel{
     public function run(){
