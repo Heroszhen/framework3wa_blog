@@ -92,6 +92,9 @@ a , a:hover{
     padding-top:70px;
     padding-left:200px;
 }
+.admin>.container-fluid{
+    padding-top:15px;
+}
 
 @media (max-width:767px) {
     #admin-header #btn-adminheader:hover{

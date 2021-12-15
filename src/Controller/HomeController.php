@@ -46,4 +46,9 @@ class HomeController extends AbstractController{
             "flash" => $flash->get()
         ]);
     }
+
+    public function logout(){
+        unset($_SESSION["user"]);
+        $this->Toredirect("");
+    }
 }
