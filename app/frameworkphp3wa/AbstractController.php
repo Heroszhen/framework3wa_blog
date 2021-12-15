@@ -11,14 +11,13 @@ abstract class AbstractController{
 
     public function __construct() {
         $loader = new FilesystemLoader(dirname(__DIR__, 2) . '/templates');
-        $twig = new Environment($loader, [
+        $this->templateEngine = new Environment($loader, [
             'cache' => false,
         ]);
-        $twig->addGlobal('session', $_SESSION);
-        $this->templateEngine = $twig;
     }
 
     public function render($file,$arguments=[]){
+        $this->templateEngine->addGlobal('session', $_SESSION);
         echo $this->templateEngine->render($file, $arguments);
     }
 
