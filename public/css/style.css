@@ -7,6 +7,10 @@ a , a:hover{
     text-decoration: none;
 }
 
+.pointer{
+    cursor: pointer;
+}
+
 /*
 #bigimg{
     position: absolute;
@@ -26,3 +30,77 @@ a , a:hover{
     height:100%;
     width:auto;
 }*/
+
+
+.sb-color{
+    color:#4e73df;
+}
+#admin-header{
+    position:absolute;
+    z-index: 100;
+    position: fixed;
+    top:0;
+    left:0;
+    background-color: white;
+    height:70px;
+    width:100vw;
+    padding-left:200px;
+    box-shadow: 0 .15rem 1.75rem 0 rgba(58,59,69,.15)!important;
+    
+}
+#admin-header>.wrap{
+    width:100%;
+    height:100%;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+}
+
+#admin-header #btn-adminheader{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height:40px;
+    width:40px;
+    border-radius: 50%;
+}
+
+
+#admin-header #btn-adminheader .bi-list{
+    display:none;
+    font-size:20px;
+}
+
+
+#admin-menu{
+    position:absolute;
+    z-index: 200;
+    position: fixed;
+    top:0;
+    left:0;
+    width:200px;
+    height:100vh;
+    background-color: #4e73df;
+    color: rgba(255,255,255,.8);
+}
+
+.admin{
+    background-color: #f8f9fc;
+    min-height:100vh;
+    width:100%;
+    padding-top:70px;
+    padding-left:200px;
+}
+
+@media (max-width:767px) {
+    #admin-header #btn-adminheader:hover{
+        background-color: gainsboro;
+    }
+    #admin-header #btn-adminheader:hover .bi-list{
+        font-weight: bold;
+    }
+    #admin-header #btn-adminheader .bi-list{
+        display:inline;
+    }
+}

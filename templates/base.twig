@@ -13,11 +13,14 @@
     <title>{% block title %}Frameworkphp3wa{% endblock %}</title>
   </head>
   <body>
+    
     {% if session["page"] == "admin" %}
       {% include 'admin/adminheader.html.twig' %}
     {% endif %}
 
-    {% block content %}{% endblock %}
+    <main>
+      {% block content %}{% endblock %}
+    </main>
 
     {% if session["page"] == "admin" %}
       {% include 'admin/adminmenu.html.twig' %}
