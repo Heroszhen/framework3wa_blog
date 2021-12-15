@@ -32,4 +32,11 @@
 <h2>Remarques</h2>
 <ul>
     <li>config.php est le fichier servant à stocker toute la configuration du projet, il ne faut pas l'envoyer sur github</li>
-</ul># framework3wa_blog
+</ul>
+
+<h2>Serveur</h2>
+<ul>
+    <li>php -S localhost:8000 -t public</li>
+</ul>
+
+# framework3wa_blog

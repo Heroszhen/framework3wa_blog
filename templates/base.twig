@@ -13,7 +13,10 @@
     <title>{% block title %}Frameworkphp3wa{% endblock %}</title>
   </head>
   <body>
-  {{ session["page"] }}
+    <div>
+    page actuelle : {{ session["page"] }}
+    </div>
+    
     {% if session["page"] == "admin" %}
       {% include 'admin/adminheader.html.twig' %}
     {% endif %}
