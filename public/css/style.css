@@ -83,6 +83,29 @@ a , a:hover{
     height:100vh;
     background-color: #4e73df;
     color: rgba(255,255,255,.8);
+    padding-left:20px;
+    padding-right:20px;
+}
+#admin-menu>div{
+    border-bottom:1px solid rgba(255,255,255,.15);
+}
+#admin-menu>div.onelink a{
+    width:100%;
+    display:flex;
+    align-items: center;
+    margin-top:20px;
+    cursor: pointer;
+    color: rgba(255,255,255,.8);
+    padding-left:5px;
+    padding-right:5px;
+    padding-bottom:5px;
+}
+#admin-menu>div.onelink.active a{
+    color:white;
+    font-weight: bold;
+}
+#admin-menu>div.onelink a>div:nth-child(1){
+    margin-right:10px;
 }
 
 .admin{

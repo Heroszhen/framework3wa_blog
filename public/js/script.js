@@ -20,9 +20,6 @@ function resizeAdminHeaderMenu(){
             menu.style.top = "70px";
             menu.style.height = "calc(100vh - 70px)";
             admin.style.paddingLeft = "0";
-            if(menu.style.display == ""){
-                menu.style.display = "none";
-            }
         }
     }
 }
@@ -38,9 +35,24 @@ function switchAdminMenu(){
     let menu = document.getElementById("admin-menu");
     if(width <= 767){
         if(menu.style.display == "" || menu.style.display == "block"){
-            menu.style.display = "none";
+            //menu.style.display = "none";
+            animate(null,menu,
+            [
+                { transform: 'translateX(-200px)' }
+            ], 300, 1,
+            ()=>{
+                menu.style.display = "none";
+            },280);
         }else{
-            menu.style.display = "block";
+            //menu.style.display = "block";
+            animate(()=>{
+                menu.style.display = "block";
+            },
+            menu,
+            [
+                { transform: 'translateX(-200px)' },
+                { transform: 'translateX(0)' }
+            ], 300, 1);
         }
     }
 }
