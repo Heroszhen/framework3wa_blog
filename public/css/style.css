@@ -119,6 +119,19 @@ a , a:hover{
     padding-top:15px;
 }
 
+.page-title{
+    color: #5a5c69!important;
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem!important;
+}
+
+.admin section{
+    background-color: white;
+    padding:10px;
+    box-shadow: 0 .15rem 1.75rem 0 rgba(58,59,69,.15)!important;
+    border-radius: 0.35rem;
+}
+
 @media (max-width:767px) {
     #admin-header #btn-adminheader:hover{
         background-color: gainsboro;
@@ -128,5 +141,35 @@ a , a:hover{
     }
     #admin-header #btn-adminheader .bi-list{
         display:inline;
+    }
+
+    .admin table thead{
+        display:none;
+    }
+    .admin table tr {
+        border-bottom: 3px solid #ddd;
+        display: block;
+    }
+
+    .admin table td {
+        border-bottom: 1px solid #ddd;
+        display: block;
+        font-size: .8em;
+        text-align: right;
+    }
+      
+    .admin table td::before {
+        /*
+        * aria-label has no advantage, it won't be read inside a table
+        content: attr(aria-label);
+        */
+        content: attr(data-label);
+        float: left;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+      
+    .admin table td:last-child {
+        border-bottom: 0;
     }
 }

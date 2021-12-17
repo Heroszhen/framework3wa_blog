@@ -2,7 +2,7 @@
 
 namespace App\Repository;
 
-use App\Entity\Exemple;
+use App\Entity\User;
 use Frameworkphp3wa\AbstractRepository;
 
 class UserRepository extends AbstractRepository{

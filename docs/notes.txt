@@ -72,3 +72,5 @@ password_hash("aaaaaaaa", PASSWORD_DEFAULT)
 
 ---blog
 user , category, photo, article,
+
+category: id, name,created

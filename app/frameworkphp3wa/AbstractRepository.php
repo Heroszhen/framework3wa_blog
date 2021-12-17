@@ -10,7 +10,7 @@ abstract class AbstractRepository{
         $this->pdo = (new Kernel)->getPDO();
     }
 
-    function execRequete($req,$params = array()){
+    protected function execRequete($req,$params = array()){
 
 		// Sanitize
 		if ( !empty($params)){
@@ -28,5 +28,30 @@ abstract class AbstractRepository{
 
 		return $r;
 	}
+
+	protected function persist(string $entity,array $params){
+		$req = "INSERT INTO ".$entity ."(";
+		$req2 = "VALUES (";
+		$index = 0;
+		foreach($params as $key=>$value){
+			$req .= $key;
+			$req2 .= ":".$key;
+			if($index < count($params) - 1){
+				$req .= ", ";
+				$req2 .= ", ";
+			}else{
+				$req .= ")";
+				$req2 .= ")";
+			} 	
+			$index++;
+		}
+		$req .= " ".$req2;
+		$this->execRequete($req,$params);
+		$id = $this->pdo->lastInsertId();
+		$req = "select * from ".$entity." where id = :id";
+		$one = $this->execRequete($req,["id"=>$id]);
+		return $one->fetch();
+	}
+
 
 }

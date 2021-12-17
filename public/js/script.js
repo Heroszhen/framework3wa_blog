@@ -56,3 +56,39 @@ function switchAdminMenu(){
         }
     }
 }
+
+
+//admin 
+//index.html.twig
+/*
+$("#admin-index").on("click","button#add-category",()=>{
+    $("#ModalLabel").text("Ajouter une category");
+    $("#btn-modal").click();
+});*/
+$("#admin-index button#add-category").click(()=>{
+    $("#ModalLabel").text("Ajouter une category");
+    $("#btn-modal").click();
+});
+
+$("#admin-index").on("submit","form#form-add-category",function(e){
+    e.preventDefault();
+    let sform = $(this).serialize();
+    $.post(
+        "/admin/addcategory",
+        sform,
+        function (response) {
+            if(response["status"] == undefined)$("#admin-index tbody").prepend(response);
+            $("#close-modal").click();
+        }
+    );
+});
+
+$("#admin-index").on("click","button.modifycategory",function(){
+    let id = $(this).attr("data-id");
+    $.get(
+        "/admin/getcategory/" + id,
+        function (response) {
+           console.log(response);
+        }
+    );
+});

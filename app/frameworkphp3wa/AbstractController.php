@@ -16,12 +16,16 @@ abstract class AbstractController{
         ]);
     }
 
-    public function render($file,$arguments=[]){
+    protected function render($file,$arguments=[]){
         $this->templateEngine->addGlobal('session', $_SESSION);
         echo $this->templateEngine->render($file, $arguments);
     }
 
-    public function Toredirect($url){
+    protected function Toredirect($url){
         header("Location: /".$url);
+    }
+
+    protected function json(array $response){
+        echo json_encode($response);
     }
 }
